@@ -18,12 +18,6 @@ syntax enable
 set nocompatible
 filetype plugin indent on
 
-" Plugins 
-execute pathogen#infect()
-map <C-o> :NERDTreeToggle<CR>
-set laststatus=2
-
-
 " Python
 au BufEnter,BufRead *.py setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
@@ -53,4 +47,38 @@ set termencoding=utf-8
 set smarttab		"smart tab
 set autoindent			"set auto indent
 set smartindent			"set smart indent
+
+
+
+
+" FINDING FILES:
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when we tab complete
+set wildmenu
+
+" NOW WE CAN:
+" - Hit tab to :find by partial match
+" - Use * to make it fuzzy
+
+" THINGS TO CONSIDER:
+" - :b lets you autocomplete any open buffer
+
+
+
+" TAG JUMPING:
+
+" Create the `tags` file (may need to install ctags first)
+command! MakeTags !ctags -R .
+
+" NOW WE CAN:
+" - Use ^] to jump to tag under cursor
+" - Use g^] for ambiguous tags
+" - Use ^t to jump back up the tag stack
+
+" THINGS TO CONSIDER:
+" - This doesn't help if you want a visual list of tags
 
