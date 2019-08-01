@@ -9,18 +9,19 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 ;; setting up the line number
-(global-linum-mode t)
+(column-number-mode)
+(global-linum-mode 1)
 
 ;; set the mode to edit the files throught ssh
 (setq tramp-default-method "ssh")
 
-;; tabulator size 
+;; tabulator size
 tab-width 3
 
 ;; check the spelling
 ;;ispell-dictionary "american"
 
-;; alias for shorter yes and no 
+;; alias for shorter yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 
@@ -58,4 +59,21 @@ tab-width 3
     (global-set-key "{" 'skeleton-pair-insert-maybe)
     (global-set-key "'" 'skeleton-pair-insert-maybe)
     (global-set-key "\"" 'skeleton-pair-insert-maybe)
+    (show-paren-mode)
 
+;; make Emacs start in fullscreen mode
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
+
+;; make emacs less user friendly
+(setq frame-title-format "emacs")
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+;; underline the line you are on
+(global-hl-line-mode)
+
+(ido-mode)
+
+(autopair-global-mode)
