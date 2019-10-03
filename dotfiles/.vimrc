@@ -8,7 +8,9 @@
 set number
 
 " Tab size
-set tabstop=3
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " Finding files 
 set path+=**
@@ -96,3 +98,13 @@ command! MakeTags !ctags -R .
 
 " NOW WE CAN:
 " - Use ^n and ^p to go back and forth in the suggestion list
+
+
+" PLUGINS:
+
+execute pathogen#infect()
+
+let g:airline_theme='wombat'
+
+
+
