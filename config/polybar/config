@@ -27,13 +27,13 @@ acolor = #FFFFFF
 curgent = #EF5350
 coccupied = #42A5F5
 
-shade1 = #212121
-shade2 = #424242
-shade3 = #616161
-shade4 = #757575
-shade5 = #9E9E9E
-shade6 = #BDBDBD
-shade7 = #D4D4D4
+shade1 = #00e1a3 
+shade2 = #00e1b9 
+shade3 = #00e1d0 
+shade4 = #00d0e1 
+shade5 = #00c3df 
+shade6 = #5edfff
+shade7 = #0086AD
 shade8 = #EEEEEE
 ashade8 = #2C2C2C
 
@@ -101,8 +101,8 @@ type = custom/text
 content = 
 ;alt icons = 
 content-padding = 2
-content-background = ${color.shade1}
-content-foreground = ${color.fg}
+;content-background = ${color.shade1}
+;content-foreground = ${color.fg}
 click-left = rmenu_wi_1
 click-right = rmenu_wi_1
 
@@ -146,38 +146,38 @@ label-occupied-foreground = ${color.coccupied}
 
 [module/google]
 type = custom/text
-content = 
+content = F
 content-padding = 2
-content-foreground = ${color.green}
-click-left = xdg-open https://www.google.com/ 
+content-foreground = ${color.blue}
+click-left = firefox https://www.google.com/ 
 
 [module/github]
 type = custom/text
 content = 
 content-padding = 2
 content-foreground = ${color.black}
-click-left = xdg-open https://www.github.com/ 
+click-left = firefox https://www.github.com/ 
 
 [module/reddit]
 type = custom/text
 content = 
 content-padding = 2
 content-foreground = ${color.orange}
-click-left = xdg-open https://www.reddit.com/
+click-left = firefox https://www.reddit.com/
 
 [module/facebook]
 type = custom/text
 content = 
 content-padding = 2
 content-foreground = ${color.blue}
-click-left = xdg-open https://www.facebook.com/
+click-left = rambox 
 
 [module/youtube]
 type = custom/text
 content = 
 content-padding = 2
 content-foreground = ${color.red}
-click-left = xdg-open https://www.youtube.com/
+click-left = firefox https://www.youtube.com/
 
 ;==========================================================
 
@@ -191,7 +191,7 @@ bar-indicator-foreground = #ff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = #0086AD 
 bar-empty = ─
 bar-empty-font = 2
 
@@ -204,7 +204,7 @@ format-muted-prefix = "  Vol: "
 format-muted-foreground = ${color.fg}
 label-muted = MUTED
 bar-volume-width = 12
-bar-volume-foreground-0 = #9f78e1
+bar-volume-foreground-0 = #0086AD 
 bar-volume-gradient = false
 bar-volume-indicator = │
 bar-volume-indicator-font = 2
@@ -219,7 +219,7 @@ bar-volume-empty-font = 2
 
 [module/pkg]
 type = custom/script
-exec = updates.sh
+exec = /home/tklas/.config/polybar/updates.sh
 format-background = ${color.shade6}
 format-padding = 2
 tail = true
