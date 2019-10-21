@@ -12,18 +12,27 @@ if ! ping -c 2 8.8.8.8; then
 		  exit 1
 fi
 
+echo "Installing stuff that Tomik needs"
+sudo pacman -Suy python3 pip3 htop ansible fish 
+
+if [ ! "$SHELL" = "/usr/bin/fish" ];then 
+    echo "Change default shell to fish"
+    sudo usermod --shell /usr/bin/fish tklas
+fi
+
+
 printf -n "Updating system.."
 sudo pacman -Syyu
 
-if [ ! -d ~/software ]; then
-		  mkdir ~/software
+if [ ! -d ~/Software ]; then
+		  mkdir ~/Software
 fi
 
-cd ~/software
+cd ~/Software
 
 if ! git --version; then 
 		  printf -n "Installing git"
-		  sudo pacman -S git
+		  sudo pacman -Sy git
 fi
 
 git_repositories=$( cat git-to-clone )
