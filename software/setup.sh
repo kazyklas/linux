@@ -13,7 +13,7 @@ if ! ping -c 2 8.8.8.8; then
 fi
 
 echo "Installing stuff that Tomik needs"
-sudo pacman -Suy python3 pip3 htop ansible fish 
+sudo pacman -Suy python3 pip3 htop ansible fish i3-gaps i3-lock dmenu vim 
 
 if [ ! "$SHELL" = "/usr/bin/fish" ];then 
     echo "Change default shell to fish"
