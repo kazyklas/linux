@@ -5,6 +5,7 @@
 "#############################
 
 " Number of lines
+
 set number
 
 " Tab size
@@ -38,6 +39,7 @@ inoremap [ []<Esc>:let leavechar="]"<CR>i
 inoremap { {}<Esc>:let leavechar="}"<CR>i
 inoremap " ""<Esc>:let leavechar="""<CR>i
 inoremap ' ''<Esc>:let leavechar="'"<CR>i
+
 
 
 " set UTF-8 encoding
@@ -106,5 +108,5 @@ execute pathogen#infect()
 
 let g:airline_theme='wombat'
 
-
+colorscheme nord
 
